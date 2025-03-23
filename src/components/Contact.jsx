@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useCallback } from "react";
+import React, { useRef, useState, useMemo, useCallback , useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import Swal from 'sweetalert2'
 
 const Contact = () => {
   const formRef = useRef();
@@ -47,8 +48,24 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
+          //alert("Thank you. I will get back to you as soon as possible.");
+          // make amazing alert here
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Thank you. I will get back to you as soon as possible.",
+            showConfirmButton: false,
+            timer: 3500,
+            theme: "dark",
+            background: "#915EFF",
+            color: "#fff",
+            iconColor: "#fff",
+            showClass: {
+              popup: 'swal2-show', // Keeps the popup animation
+              icon: '' // Disables the icon animation
+            }          
+          });
+        
           setForm({
             name: "",
             email: "",
@@ -58,8 +75,22 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          //alert("Ahh, something went wrong. Please try again.");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Ahh, something went wrong. Please try again.",
+            showConfirmButton: false,
+            timer: 4500,
+            theme: "dark",
+            background: "#915EFF",
+            color: "#fff",
+            iconColor: "#fff",
+            showClass: {
+              popup: 'swal2-show', // Keeps the popup animation
+              icon: '' // Disables the icon animation
+            }          
+          });
         }
       );
   }, [form]);
