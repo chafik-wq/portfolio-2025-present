@@ -28,7 +28,6 @@
 ## 📋 <a name="table">Table of Contents</a>
 
 1. 🤖 [My Improvments](#my-improvments)
-1. 🤸 [How to Install](#how-to-install)
 ## <a name="my-improvments">🤖 My Improvments</a>
 
 The project idea and base code came from JavaScript Mastery. I improved it by fixing console errors and warnings, optimizing components using useCallback, useMemo, and memo, and upgrading libraries to their latest releases. The only exception was Tailwind CSS, which I kept at version 3.4.17, the latest v3 release. Additionally, I replaced the default browser alerts with SweetAlert for a better user experience.
