@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -23,4 +22,4 @@ const StarWrapper = (Component, idName) =>
     );
   };
 
-export default React.memo(StarWrapper);
+export default StarWrapper;
