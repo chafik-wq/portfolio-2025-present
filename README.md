@@ -15,7 +15,8 @@
     <img src="https://img.shields.io/badge/-SweetAlert2-FF0000?style=for-the-badge&logo=sweetalert&logoColor=white"     alt="SweetAlert2" />
     <img src="https://img.shields.io/badge/-Prop_Types-FFD700?style=for-the-badge&logo=javascript&logoColor=black" alt="Prop    Types" />
     <img src="https://img.shields.io/badge/-PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white" alt="PostCSS" />
-    <img src="https://img.shields.io/badge/-Autoprefixer-FF5733?style=for-the-badge&logo=postcss&logoColor=white"     alt="Autoprefixer" />
+    <img src="https://img.shields.io/badge/-Autoprefixer-FF5733?style=for-the-badge&logo=postcss&logoColor=white" alt="Autoprefixer" />
+    <img src="https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
   </div>
 
   <h3 align="center">A 3D Developer Portfolio ( Project Improve 🚀 )</h3>
@@ -316,7 +317,7 @@ emailjs
     ...
 ```
 
-👉 **The ESLint configurations that i set up**<br/>
+👉 **The eslint configurations that i set up**<br/>
 1.Eslint install:
 ```
 npm i eslint@9.23.0 --force
