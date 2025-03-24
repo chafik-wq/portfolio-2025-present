@@ -1,7 +1,16 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank">
-      <img src="assets/hero_section_snapshot.png" alt="Project Banner" width="100%" height="200px" style="border-radius: 20px;object-fit: cover; object-position: top;">
+      <img src="assets/hero_section_snapshot.png" alt="Project Banner" class="hero-img"/>
+      <style>
+        .hero-img {
+          width: 100%;
+          max-height: 200px;
+          border-radius: 20px;
+          object-fit: cover;
+          object-position: top;
+        }
+      </style>
     </a>
   <br />
 
