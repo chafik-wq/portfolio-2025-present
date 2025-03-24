@@ -29,9 +29,9 @@
 
 1. 🤖 [My Improvments](#my-improvments)
 2. 🤸 [Quick Setup](#quick-setup)
-## <a name="my-improvments">🤖 My Improvments</a>
+## <a name="my-improvments">🤖 My Improvments</a> 
 
-The project idea and base code came from JavaScript Mastery. I improved it by fixing console errors and warnings, optimizing components using useCallback, useMemo, and memo, and upgrading libraries to their latest releases. The only exception was Tailwind CSS, which I kept at version 3.4.17, the latest v3 release. Additionally, I replaced the default browser alerts with SweetAlert for a better user experience.
+The project idea and base code originated from JavaScript Mastery. I enhanced it by resolving console errors and warnings, optimizing components with `useCallback`, `useMemo`, and `memo`, and updating libraries to their latest versions—except for Tailwind CSS, which remains at version 3.4.17, the latest v3 release. Additionally, I replaced the default browser alerts with SweetAlert for a more polished user experience. I also integrated ESLint into the project, fixing multiple warnings and errors while selectively disabling unnecessary ones.
 
 
 👉 **Console Errors that i fixed**: <br/>
@@ -314,6 +314,63 @@ emailjs
         }          
       });
     ...
+```
+
+👉 **The ESLint configurations that i set up**<br/>
+1.Eslint install:
+```
+npm i eslint@9.23.0 --force
+```
+2.Eslint setup:
+```
+npx eslint --init
+```
+3.Selections:
+```
+How would you like to use ESLint?: To check syntax and find problems
+What type of modules does your project use?: JavaScript modules (import/export)
+Which framework does your project use?: React
+Does your project use TypeScript?: Yes
+Where does your code run?: Node, Browser
+Would you like to install them now with npm?: No
+```
+The output eslint.config.js file was like this:
+```jsx
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
+
+
+export default defineConfig([
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],plugins: { js },extends: ["js/recommended"]},
+  tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+]);
+```
+4.Setup eslint settings:
+```jsx
+    ...
+    extends: ["js/recommended"],
+    settings: {
+      react: {
+        version: "detect" // Automatically detects the React version
+      }
+    }
+```
+5.typescript-eslint globals eslint-plugin-react @eslint/js liberaries installation:
+```
+npm i typescript-eslint@8.27.0 globals@16.0.0 eslint-plugin-react@7.37.4 @eslint/js@9.23.0 --force
+```
+6.Add script:
+```json
+  "scripts": {
+    ...
+    "lint": "eslint ."
+  },
 ```
 ## <a name="quick-setup">🤸 Quick Setup</a>
 
