@@ -1,8 +1,7 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank">
-      <img src="assets/hero_section_snapshot.png" alt="Project Banner" class="hero-img"/>
-      <style>
+          <style>
         .hero-img {
           width: 100%;
           max-height: 200px;
@@ -11,6 +10,8 @@
           object-position: top;
         }
       </style>
+      <img src="assets/hero_section_snapshot.png" alt="Project Banner" class="hero-img"/>
+
     </a>
   <br />
 
