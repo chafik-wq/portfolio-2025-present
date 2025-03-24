@@ -334,7 +334,7 @@ Does your project use TypeScript?: Yes
 Where does your code run?: Node, Browser
 Would you like to install them now with npm?: No
 ```
-The output eslint.config.js file was like this:
+The output eslint.config.js file should looks like this:
 ```jsx
 import { defineConfig } from "eslint/config";
 import globals from "globals";
