@@ -10,7 +10,6 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // my optimizations
   const handleScrollToTop = useCallback(() => {
     setActive("");
     window.scrollTo(0, 0);
@@ -76,7 +75,6 @@ const Navbar = () => {
     },
     [active, handleLinkClick, handleToggle]
   );
-  // end my optimizations
 
   return (
     <nav
