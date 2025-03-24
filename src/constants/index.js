@@ -25,7 +25,8 @@ import {
   threejs,
   nextjs,
   ex,
-  python
+  python,
+  hero_section_snapshot
 } from "../assets";
 
 export const navLinks = [
@@ -166,25 +167,41 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Fake1",
+    name: "Portfolio",
     description:
-      "Fake description 1 that provides details about the functionality and purpose of this project, using placeholder text.",
+      "The project idea and base code came from JavaScript Mastery. I improved it by fixing console errors and warnings, optimizing components using useCallback, useMemo, and memo, and upgrading libraries to their latest releases. The only exception was Tailwind CSS, which I kept at version 3.4.17, the latest v3 release. Additionally, I replaced the default browser alerts with SweetAlert for a better user experience.",
     tags: [
       {
-        name: "fake-tech1",
+        name: "Reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "fake-tech2",
+        name: "Vitejs",
         color: "green-text-gradient",
       },
       {
-        name: "fake-tech3",
+        name: "Threejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Npm",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Git",
+        color: "red-text-gradient",
+      },
+      {
+        name: "Github",
+        color: "yallow-text-gradient",
+      },
+      {
+        name: "Readme.md",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/fake1",
+    image: hero_section_snapshot,
+    source_code_link: "https://github.com/chafik-wq/portfolio-2025-present",
   },
   {
     name: "Fake2",
