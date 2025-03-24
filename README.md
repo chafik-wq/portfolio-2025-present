@@ -365,7 +365,7 @@ export default defineConfig([
 ```
 npm i typescript-eslint@8.27.0 globals@16.0.0 eslint-plugin-react@7.37.4 @eslint/js@9.23.0 --force
 ```
-6.Add script:
+6.Add run script:
 ```json
   "scripts": {
     ...
