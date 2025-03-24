@@ -1,14 +1,14 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/0fYi8SGA20k?feature=shared" target="_blank">
-      <img src="assets/hero_section_part.png" alt="Project Banner">
+      <img src="assets/hero_section_part.png" alt="Project Banner" />
     </a>
   <br />
 
   <div>
     <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" />
     <img src="https://img.shields.io/badge/-React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"   alt="React  Router" />
-    <img src="https://img.shields.io/badge/-Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" / >
+    <img src="https://img.shields.io/badge/-Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
     <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white"     alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/-Framer_Motion-FF0082?style=for-the-badge&logo=framer&logoColor=white"   alt="Framer   Motion" />
