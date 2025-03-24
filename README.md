@@ -315,7 +315,7 @@ emailjs
       });
     ...
 ```
-## <a name="quick-setup">🤸 Quick Start</a>
+## <a name="quick-setup">🤸 Quick Setup</a>
 
 Follow these steps to set up the project locally on your machine.
 
