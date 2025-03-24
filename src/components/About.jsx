@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
@@ -47,10 +49,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a self-taught frontend developer with expertise in JavaScript, React.js, Next.js, 
+        I{"'"}m a self-taught frontend developer with expertise in JavaScript, React.js, Next.js, 
         and experience in Node.js and Python. Passionate about building high-performance, 
         user-friendly applications, I stay up-to-date with the latest web technologies. 
-        Open to new opportunities in web development—let's create something great together!
+        Open to new opportunities in web development—let{"'"}s create something great together!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
