@@ -14,7 +14,7 @@ import {
   nextjs,
   ex,
   python,
-  hero_section_snapshot
+  hero_section_snapshot,
 } from "../assets";
 
 export const navLinks = [
@@ -128,8 +128,7 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/12.jpg",
   },
   {
-    testimonial:
-      `We were struggling with slow load times until Fake3 optimized our platform. Now, it${"'"}s lightning fast!`,
+    testimonial: `We were struggling with slow load times until Fake3 optimized our platform. Now, it${"'"}s lightning fast!`,
     name: "Michael Smith",
     designation: "CTO",
     company: "Speedy Web Services",

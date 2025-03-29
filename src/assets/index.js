@@ -66,5 +66,5 @@ export {
   nextjs,
   ex,
   python,
-  hero_section_snapshot
+  hero_section_snapshot,
 };

@@ -30,33 +30,41 @@
 
 1. 🤖 [My Improvments](#my-improvments)
 2. 🤸 [Quick Setup](#quick-setup)
-## <a name="my-improvments">🤖 My Improvments</a> 
+
+## <a name="my-improvments">🤖 My Improvments</a>
 
 The project idea and base code originated from JavaScript Mastery. I enhanced it by resolving console errors and warnings, optimizing components with `useCallback`, `useMemo`, and `memo`, and updating libraries to their latest versions—except for Tailwind CSS, which remains at version 3.4.17, the latest v3 release. Additionally, I replaced the default browser alerts with SweetAlert for a more polished user experience. I also integrated ESLint into the project, fixing multiple warnings and errors while selectively disabling unnecessary ones.
 
-
 👉 **Console Errors that i fixed**: <br/>
-1.
-<img src="assets/tilt_console_error.png" alt="Project Banner" style="width: 100%; max-height: 200px; border-radius: 20px;object-fit: cover; object-position: top;">
-Fixed by upgrading react-tilt to version 1.0.2
+
+1.  <img src="assets/tilt_console_error.png" alt="Project Banner" style="width: 100%; max-height: 200px; border-radius: 20px;object-fit: cover; object-position: top;">
+    Fixed by upgrading react-tilt to version 1.0.2
+
 ```
 npm i react-tilt@1.0.2 --force
 ```
+
 And improtin Tilt like this
+
 ```jsx
 import { Tilt } from "react-tilt";
 ```
+
 <br/>
 2.
 <img src="assets/three_geometry_console_error.png" alt="Project Banner" style="width: 100%; max-height: 200px; border-radius: 20px;object-fit: cover; object-position: top;">
 Fixed by replacing 5000 with 5001 so 5001 / 3 = 1667The result must not be a floating-point number, I guess.
 
 ```jsx
-const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius: 1.2 }));
+const [sphere] = useState(() =>
+  random.inSphere(new Float32Array(5001), { radius: 1.2 }),
+);
 ```
 
 👉 **Components that I optimized using React.js optimization solutions**:<br/>
+
 1. Using useCallback and useMemo :
+
 ```jsx
   // Contact.jsx
   const handleChange = useCallback((e) => {
@@ -104,9 +112,9 @@ const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius
             showClass: {
               popup: 'swal2-show', // Keeps the popup animation
               icon: '' // Disables the icon animation
-            }          
+            }
           });
-        
+
           setForm({
             name: "",
             email: "",
@@ -130,7 +138,7 @@ const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius
             showClass: {
               popup: 'swal2-show', // Keeps the popup animation
               icon: '' // Disables the icon animation
-            }          
+            }
           });
         }
       );
@@ -211,15 +219,17 @@ const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius
   useEffect
 
 ```
+
 2. Using memo :
+
 ```jsx
 export default React.memo(Navbar);
 export default SectionWrapper(React.memo(Tech), "");
 export default SectionWrapper(React.memo(Works), ""); ...etc
 ```
 
-
 👉 **Liberaries that i updated**:<br/>
+
 ```json
   "dependencies": {
     "@emailjs/browser": "^3.10.0" // => "^4.4.1", latest
@@ -245,38 +255,53 @@ export default SectionWrapper(React.memo(Works), ""); ...etc
   }
 
 ```
+
 For react-router-dom:
+
 ```
 npm i react-router-dom@19.0.0 --force
 ```
+
 And
+
 ```jsx
 // App.jsx
 import { BrowserRouter } from "react-router";
 ```
+
 For react-tilt:
+
 ```
 npm i react-tilt@1.0.2 --force
 ```
+
 And
+
 ```jsx
 // Works.jsx
 import { Tilt } from "react-tilt";
 ```
+
 For the others:
+
 ```
 npm i @emailjs/browser@4.4.1 @react-three/drei@10.0.4 @react-three/fiber@9.1.0 framer-motion@12.5.0 maath@0.10.8 react@19.0.0 react-dom@19.0.0 react-vertical-timeline-component@3.5.3 three@0.174.0 @types/react@19.0.12 @types/react-dom@19.0.4 @vitejs/plugin-react@4.3.4 autoprefixer@10.4.21 postcss@8.5.3 tailwindcss@3 vite@6.2.2 --force
 ```
+
 Also i forced to install prop-types latest
+
 ```
 npm i prop-types@15.8.1 --force
 ```
 
 👉 **SweetAlert2 configuration**:
+
 ```
 npm i sweetalert2@11.17.2 --force
 ```
+
 And
+
 ```jsx
 emailjs
       ...
@@ -293,7 +318,7 @@ emailjs
         showClass: {
           popup: 'swal2-show', // Keeps the popup animation
           icon: '' // Disables the icon animation
-        }          
+        }
       });
     ...
     },
@@ -312,21 +337,26 @@ emailjs
         showClass: {
           popup: 'swal2-show', // Keeps the popup animation
           icon: '' // Disables the icon animation
-        }          
+        }
       });
     ...
 ```
 
 👉 **The eslint configurations that i set up**<br/>
 1.Eslint install:
+
 ```
 npm i eslint@9.23.0 --force
 ```
+
 2.Eslint setup:
+
 ```
 npx eslint --init
 ```
+
 3.Selections:
+
 ```
 How would you like to use ESLint?: To check syntax and find problems
 What type of modules does your project use?: JavaScript modules (import/export)
@@ -335,7 +365,9 @@ Does your project use TypeScript?: Yes
 Where does your code run?: Node, Browser
 Would you like to install them now with npm?: No
 ```
+
 The output eslint.config.js file should looks like this:
+
 ```jsx
 import { defineConfig } from "eslint/config";
 import globals from "globals";
@@ -343,16 +375,24 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 
-
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],plugins: { js },extends: ["js/recommended"]},
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
 ]);
 ```
+
 4.Setup eslint settings:
+
 ```jsx
     ...
     extends: ["js/recommended"],
@@ -362,17 +402,22 @@ export default defineConfig([
       }
     }
 ```
+
 5.typescript-eslint globals eslint-plugin-react @eslint/js liberaries installation:
+
 ```
 npm i typescript-eslint@8.27.0 globals@16.0.0 eslint-plugin-react@7.37.4 @eslint/js@9.23.0 --force
 ```
+
 6.Add run script:
+
 ```json
   "scripts": {
     ...
     "lint": "eslint ."
   },
 ```
+
 ## <a name="quick-setup">🤸 Quick Setup</a>
 
 Follow these steps to set up the project locally on your machine.
@@ -413,22 +458,29 @@ REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
 Replace the placeholder values with your actual EmailJS credentials. You can obtain these credentials by signing up on the [EmailJS website](https://www.emailjs.com/).
 
 Define global variables in vite.config.js file
+
 ```jsx
-import { defineConfig, loadEnv } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig, loadEnv } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '');
+  const env = loadEnv(mode, process.cwd(), "");
   return {
     define: {
-      'process.env.REACT_APP_EMAILJS_SERVICE_ID': JSON.stringify(env.REACT_APP_EMAILJS_SERVICE_ID),
-      'process.env.REACT_APP_EMAILJS_TEMPLATE_ID': JSON.stringify(env.REACT_APP_EMAILJS_TEMPLATE_ID),
-      'process.env.REACT_APP_EMAILJS_PUBLIC_KEY': JSON.stringify(env.REACT_APP_EMAILJS_PUBLIC_KEY),
+      "process.env.REACT_APP_EMAILJS_SERVICE_ID": JSON.stringify(
+        env.REACT_APP_EMAILJS_SERVICE_ID,
+      ),
+      "process.env.REACT_APP_EMAILJS_TEMPLATE_ID": JSON.stringify(
+        env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      ),
+      "process.env.REACT_APP_EMAILJS_PUBLIC_KEY": JSON.stringify(
+        env.REACT_APP_EMAILJS_PUBLIC_KEY,
+      ),
     },
     plugins: [react()],
-  }
-})
+  };
+});
 ```
 
 **Running the Project**
@@ -438,7 +490,6 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
-
 
 **You can also build and preview it**
 

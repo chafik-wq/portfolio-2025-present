@@ -11,7 +11,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={3.15} groundColor='#151030' />
+      <hemisphereLight intensity={3.15} groundColor="#151030" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -35,9 +35,12 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Define a callback function to handle changes to the media query
-  const handleMediaQueryChange = useCallback((event) => {
-    setIsMobile(event.matches);
-  }, [setIsMobile])
+  const handleMediaQueryChange = useCallback(
+    (event) => {
+      setIsMobile(event.matches);
+    },
+    [setIsMobile],
+  );
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -45,7 +48,6 @@ const ComputersCanvas = () => {
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
-
 
     // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
@@ -58,7 +60,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
