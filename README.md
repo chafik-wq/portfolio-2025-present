@@ -17,6 +17,8 @@
     <img src="https://img.shields.io/badge/-PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white" alt="PostCSS" />
     <img src="https://img.shields.io/badge/-Autoprefixer-FF5733?style=for-the-badge&logo=postcss&logoColor=white" alt="Autoprefixer" />
     <img src="https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
+    <img src="https://img.shields.io/badge/-Prettier-ff69b4?style=for-the-badge&logo=prettier&logoColor=white" alt="Prettier" />
+    <img src="https://img.shields.io/badge/-VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="vscode" />
   </div>
 
   <h3 align="center">A 3D Developer Portfolio ( Project Improve 🚀 )</h3>
