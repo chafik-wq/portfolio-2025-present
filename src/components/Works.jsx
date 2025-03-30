@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -17,8 +17,29 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+  
+  const memorizedFadeInUpSpringIndex05075 = useMemo(
+    () => fadeIn("up", "spring", index * 0.5, 0.75),
+    [fadeIn]
+  );
+  
+  const cachedWindowOpen = useCallback(
+    () => window.open(source_code_link, "_blank"),
+    [window]
+  );
+
+  const memorizedTags = useMemo(
+    () =>
+      tags.map((tag) => (
+        <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+          #{tag.name}
+        </p>
+      )),
+    [tags]
+  );
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={memorizedFadeInUpSpringIndex05075}>
       <Tilt
         options={{
           max: 45,
@@ -36,7 +57,7 @@ const ProjectCard = ({
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
+              onClick={cachedWindowOpen}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
@@ -53,43 +74,43 @@ const ProjectCard = ({
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
+        <div className="mt-4 flex flex-wrap gap-2">{memorizedTags}</div>
       </Tilt>
     </motion.div>
   );
 };
 
 const Works = () => {
+
+  const memorizedTextVariant = useMemo(() => textVariant(), [textVariant]);
+  
+  const memorizedFadeIn011 = useMemo(() => fadeIn("", "", 0.1, 1), [fadeIn]);
+
+  const memorizedProjects = useMemo(
+    () =>
+      projects.map((project, index) => (
+        <ProjectCard key={`project-${index}`} index={index} {...project} />
+      )),
+    [projects]
+  );
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={memorizedTextVariant}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={memorizedFadeIn011}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Still working on
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
+      <div className="mt-20 flex flex-wrap gap-7">{memorizedProjects}</div>
     </>
   );
 };

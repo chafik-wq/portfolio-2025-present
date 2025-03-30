@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useMemo } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -14,6 +14,20 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
+
+  const memorizedServices = useMemo(
+    () =>
+      experience.points.map((point, index) => (
+        <li
+          key={`experience-point-${index}`}
+          className="text-white-100 text-[14px] pl-1 tracking-wider"
+        >
+          {point}
+        </li>
+      )),
+    [experience.points]
+  );
+
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -43,24 +57,26 @@ const ExperienceCard = ({ experience }) => {
         </p>
       </div>
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
+      <ul className="mt-5 list-disc ml-5 space-y-2">{memorizedServices}</ul>
     </VerticalTimelineElement>
   );
 };
 
 const Experience = () => {
+
+  const memorizedTextVariant = useMemo(() => textVariant(), [textVariant]);
+
+  const memorizedExperience = useMemo(
+    () =>
+      experiences.map((experience, index) => (
+        <ExperienceCard key={`experience-${index}`} experience={experience} />
+      )),
+    [experiences]
+  );
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={memorizedTextVariant}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
@@ -70,14 +86,7 @@ const Experience = () => {
       </motion.div>
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+        <VerticalTimeline>{memorizedExperience}</VerticalTimeline>
       </div>
     </>
   );

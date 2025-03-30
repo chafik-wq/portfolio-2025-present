@@ -18,15 +18,18 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = useCallback((e) => {
-    const { target } = e;
-    const { name, value } = target;
+  const handleChange = useCallback(
+    (e) => {
+      const { target } = e;
+      const { name, value } = target;
 
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
-  }, []);
+      setForm((prevForm) => ({
+        ...prevForm,
+        [name]: value,
+      }));
+    },
+    [setForm]
+  );
 
   const handleSubmit = useCallback(
     (e) => {
@@ -150,12 +153,22 @@ const Contact = () => {
     [form, handleChange, handleSubmit, loading],
   );
 
+  const memorizedSlideInLeftTween021 = useMemo(
+    () => slideIn("left", "tween", 0.2, 1),
+    [slideIn]
+  );
+
+  const memorizedSlideInRightTween021 = useMemo(
+    () => slideIn("right", "tween", 0.2, 1),
+    [slideIn]
+  );
+
   return (
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        variants={memorizedSlideInLeftTween021}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
@@ -164,7 +177,7 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
+        variants={memorizedSlideInRightTween021}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
