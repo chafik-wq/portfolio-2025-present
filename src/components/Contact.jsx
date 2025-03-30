@@ -38,8 +38,8 @@ const Contact = () => {
 
       emailjs
         .send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
           {
             from_name: form.name,
             to_name: "Chafik",
@@ -47,7 +47,7 @@ const Contact = () => {
             to_email: "chafik22266@gmail.com",
             message: form.message,
           },
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
         )
         .then(
           () => {
@@ -95,7 +95,7 @@ const Contact = () => {
                 icon: "", // Disables the icon animation
               },
             });
-          },
+          }
         );
     },
     [form],
