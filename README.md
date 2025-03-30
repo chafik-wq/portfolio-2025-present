@@ -493,7 +493,7 @@ npm i typescript-eslint@8.27.0 globals@16.0.0 eslint-plugin-react@7.37.4 @eslint
     "lint": "eslint ."
   },
 ```
-👉 **Added prettier to the project**: <br/>
+👉 **I also added prettier to the project**: <br/>
 It was a long way until i resume the way to add prettier to my project on these simple steps:
 1. Installing prettier on vs code
 2. Create .vscode folder and settings.json inside of it
@@ -578,30 +578,6 @@ REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
 Replace the placeholder values with your actual EmailJS credentials. You can obtain these credentials by signing up on the [EmailJS website](https://www.emailjs.com/).
 
 Define global variables in vite.config.js file
-
-```jsx
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
-
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
-  return {
-    define: {
-      "process.env.REACT_APP_EMAILJS_SERVICE_ID": JSON.stringify(
-        env.REACT_APP_EMAILJS_SERVICE_ID,
-      ),
-      "process.env.REACT_APP_EMAILJS_TEMPLATE_ID": JSON.stringify(
-        env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      ),
-      "process.env.REACT_APP_EMAILJS_PUBLIC_KEY": JSON.stringify(
-        env.REACT_APP_EMAILJS_PUBLIC_KEY,
-      ),
-    },
-    plugins: [react()],
-  };
-});
-```
 
 **Running the Project**
 
