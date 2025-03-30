@@ -491,6 +491,48 @@ npm i typescript-eslint@8.27.0 globals@16.0.0 eslint-plugin-react@7.37.4 @eslint
     "lint": "eslint ."
   },
 ```
+👉 **Added prettier to the project**: <br/>
+It was a long way until i resume the way to add prettier to my project on these simple steps:
+1. Installing prettier on vs code
+2. Create .vscode folder and settings.json inside of it
+3. Writing this code inside the folder:
+```json
+  {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "prettier.tabWidth": 2
+  }
+```
+4. Executing this command on terminal:
+```bash
+npx prettier --write .
+```
 
 ## <a name="quick-setup">🤸 Quick Setup</a>
 
@@ -503,6 +545,8 @@ Make sure you have the following installed on your machine:
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
+- [vscode](https://https://code.visualstudio.com/)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 **Cloning the Repository**
 
